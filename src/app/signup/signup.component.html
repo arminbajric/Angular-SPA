@@ -1,0 +1,79 @@
+<div class="wrapper">
+  <div class="d-flex justify-content-center topmargin wrapper">
+    <div class="flag col-md-7 wrapper  ">
+
+
+      <form [formGroup]="signUpFormGroup" (ngSubmit)="signupSubmit(signupUpFormGroup)">
+        <div formGroupName="userData">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input class="sendRight form-control" type="text" formControlName="username">
+            <div *ngIf="signUpFormGroup.get('userData').get('username').hasError('usernameValidator')"><label class="lbl" >This username is in use.Choose another one!</label></div>
+            
+            <div *ngIf="submitted">
+              <label
+                *ngIf="signUpFormGroup.get('userData').get('username').hasError('required') || signUpFormGroup.get('userData').get('username').hasError('minlength')  "
+                class="lbl ">Error.Username is required and should contain at least 6 characters.</label>
+              
+            </div>
+          </div>
+
+          <div class="form-group ">
+            <label for="email">Email</label>
+            <input class="sendRight form-control" formControlName="email" type="email" email="true">
+            <div *ngIf="signUpFormGroup.get('userData').get('email').hasError('emailValidator')"><label class="lbl" >This email is in use.Choose another one!</label></div>
+            <div *ngIf="submitted">
+              <label
+                *ngIf="signUpFormGroup.get('userData').get('email').hasError('required') || signUpFormGroup.get('userData').get('email').hasError('email')"
+                class="lbl ">Error.Please check your email.</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input class="sendRight form-control" type="password" formControlName="password">
+            <div *ngIf="submitted">
+              <label
+                *ngIf="signUpFormGroup.get('userData').get('password').hasError('required') || signUpFormGroup.get('userData').get('password').hasError('minlength') "
+                class="lbl ">Password can't be blank and should contain at least 6 characters.
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select class="sendRight form-control" formControlName="country">
+              <option name="bosnia">Bosnia and Herzegovina</option>
+              <option name="serbia">Serbia</option>
+              <option name="croatia">Croatia</option>
+            </select>
+            <div *ngIf="submitted">
+              <label *ngIf="signUpFormGroup.get('userData').get('country').hasError('required') " class="lbl ">Please
+                select your country.</label>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="sendRight form-control" formControlName="gender">
+              <option name="male">Male</option>
+              <option name="female">Female</option>
+            </select>
+            <div *ngIf="submitted">
+              <label *ngIf="signUpFormGroup.get('userData').get('gender').hasError('required') " class="lbl ">Please
+                select
+                your gender.</label>
+            </div>
+          </div>
+          <div class="form-group" *ngIf="validateFalse">Wrong email or password!Try again or register.</div>
+          <div class="form-group">
+            <button class="btn btn-primary buttons">Submit</button> <button type="button" routerLink="/login"
+              class=" register btn btn-warning pull-right buttons"> Login</button>
+          </div>
+        </div>
+      </form>
+
+
+
+    </div>
+  </div>
+</div>

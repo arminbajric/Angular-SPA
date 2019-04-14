@@ -1,0 +1,44 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Areminder</a>
+    </div>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="nav navbar-nav">
+        <li class="active" (click)="showUserReminders()"><button class="btn">List all</button></li>
+        <li class="dropdown">
+          <button class=" btn dropdown-toggle" data-toggle="dropdown">Select<span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li *ngFor="let title of userReminders">{{title}}</li>
+          </ul>
+        </li>
+        <li><button (click)="getUpcoming()" class="btn">Upcoming</button></li>
+        <li><button (click)="createNew()" class="btn">Create new</button></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><button (click)="userInfo()" class="btn btn-dark"><span class="glyphicon glyphicon-user"></span>
+            {{state}}</button></li>
+        <li><button (click)="logOut()" class="btn btn-dark"><span class="glyphicon glyphicon-log-in"></span> Log
+            out</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="panel panel-default col-md-6 ">
+  <div class="heading">{{mainTitle}}</div>
+  <div #mainContent class="panel-body">
+    <div *ngIf="!loaded" class="load">Fetching..<br><img height="100" widht="100" src="../assets/images/load.gif"></div>
+  </div>
+
+</div>
+
+<div class="panel panel-default col-md-6 ">
+  <div class="heading">{{sideTitle}}</div>
+  <div #sideContent class="panel-body"></div>
+</div><br>

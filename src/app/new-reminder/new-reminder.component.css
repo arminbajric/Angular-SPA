@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+p {
+  margin-top: 100px;
+}
+
+.newT {
+  margin-top: 100px;
+  font-family: Staatliches;
+}
+
+.lbl {
+  float: left;
+}
+.row{
+  display: block;
+  margin-top: 15px;
+  
+}
+small{
+  float: right;
+  max-width: 60%;
+  color:#4682B4;
+}
+.input{
+  float: right;
+  max-width: 60%;
+}
+@media only screen and (max-width: 600px) {
+ 
+}

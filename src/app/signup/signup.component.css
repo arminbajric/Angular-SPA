@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.sendRight{
+    float: right;
+    width:60%;
+    margin-right: 15%;
+}
+
+.row{
+    display: block;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.topmargin{
+    margin-top: 100px;
+    font-family: Roboto,sans-serif;
+}
+.lbl{
+    color:white;
+    font-size: smaller;
+}
+.wrapper{
+    background-color:#4682B4 ;
+    font-size: 15px;
+    padding: 10px;
+}
+.buttons{
+    font-size: 15px;
+    font-family: inherit;
+    color:white;
+}
+.form-control{
+    font-size: 15px;
+    font-family: inherit;
+}

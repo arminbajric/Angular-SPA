@@ -1,0 +1,12 @@
+<div *ngIf="!loaded" class="load">Fetching..<br><img height="100" widht="100" src="../assets/images/load.gif"></div>
+<h4>{{message}}</h4>
+<div *ngIf="!message && loaded">
+<ul class="dropdown-menu" role="menu" aria-labelledby="testMenu">
+  <li role="presentation" class="tests" #list attr.id="{{i}}" *ngFor="let rem of col; let i = index" (click)="onClickLoadReminder(list);">{{rem?.reminder}}</li>
+</ul>
+<nav *ngIf="remindersList.length>2" aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+  </ul>
+</nav>
+</div>

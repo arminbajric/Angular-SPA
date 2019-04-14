@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+.btn{
+    margin-top:10px;
+    outline: none;
+    background-color:transparent;
+    color:white;
+   
+    
+}
+.btn:hover{
+    color:slategray;
+}
+.panel{float: left;
+background-color: #E3E3EC;
+outline: none;
+height: 500px;
+border:1pt;
+padding-left: 2%;
+padding-right: 2%;
+}
+.heading{
+    background-color: #4682B4;
+    border-radius: 3px;
+    font-family: "Roboto",sans-serif;
+    text-align: center;
+}
+.load{
+    text-align: center;
+}
+
+.content {
+  background-color: #4682B4;
+ 
+  height: 100px;
+ 
+  padding: 40px;
+  float:left;
+  color:black;
+ 
+}
+.list{list-style: none;}
+

@@ -1,0 +1,36 @@
+<form [formGroup]="createNewGroup" (ngSubmit)="submitNewReminder(createNewGroup)">
+
+  
+    <div class="form-group row rounded">
+      <label class="col-md-6 lbl">Unesite naziv podsjetnika</label>
+      <input class="col-md-6 input" formControlName="title" type="text" placeholder="Podsjetnik...">
+    
+    </div>
+    <div class="col-md-12" *ngIf="submitted">    <small *ngIf=" createNewGroup.get('title').hasError('required') || createNewGroup.get('title').hasError('minLength') ">Title is mandatory and must be at least 10 chars long.</small>
+    </div>
+    <div class="form-group row rounded">
+        <label class="col-md-6 lbl">Datum(dd.mm.yyyy)</label>
+        <input class="col-md-6 input " formControlName="date" type="text" placeholder="Datum...">
+      </div>
+      <div class="col-md-12" *ngIf="submitted">    <small *ngIf=" createNewGroup.get('date').hasError('required') || createNewGroup.get('date').hasError('pattern') ">Date is mandatory and must be in given format.</small>
+      </div>
+     
+    <div class="form-group row rounded">
+      <label class="col-md-6 lbl">Vrijeme(hh:mm:ss)</label>
+      <input class="col-md-6 input " formControlName="time" type="text" placeholder="Vrijeme...">
+    </div>
+    <div class="col-md-12" *ngIf="submitted">    <small *ngIf=" createNewGroup.get('time').hasError('required')  ">Time is mandatory and must be in given format.</small>
+    </div>
+    <div class="form-group row rounded">
+      <label class="col-md-6 lbl">Napomena</label>
+      <input class="col-md-6 input" formControlName="text" type="text" placeholder="Napomena...">
+    </div>
+    <div class="col-md-12" *ngIf="submitted">    <small *ngIf=" createNewGroup.get('text').hasError('required') ">Field is mandatory.</small>
+    </div>
+
+
+
+
+    <button class=" btn btn-primary col-md-2 ml-1 rounded">Add</button><div>{{message}}</div> <div *ngIf="submitted"><img width="40" height="40" src="../assets/images/load.gif"></div>
+
+</form>

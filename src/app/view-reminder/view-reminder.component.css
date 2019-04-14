@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+
+p {
+  margin-top: 100px;
+}
+
+.panel {
+  margin-top: 100px;
+  margin-bottom: 50px;
+ text-shadow: 2px grey;
+  box-shadow: 10pt black;
+}
+
+.panel-body {
+  height: 40px;
+  max-height: 50px;
+  background-color:#96CDCD	;
+  width: 100%;
+  font-family: Staatliches;
+}
+.panel-heading{
+  margin-top: 10px;
+  background-color: #008080;
+  display:block;
+  box-shadow: 5pt;
+  font-family:Staatliches;
+
+}
+.element:hover{
+  transform: scale(1.01);
+  transform: rotateZ('10');
+}
+.functions{
+  float: right;
+}
+.edit{
+  width: 20px;
+  height: 20px;
+}
+.delete{
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+.edit:hover{
+  transform: scale(1.1);
+}
+.delete:hover{
+  transform: scale(1.1);
+}
+.block:hover{
+  box-shadow: 3px 6px black;
+}

@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+.content {
+  background-color: #4682B4;
+ 
+  height: 100px;
+ 
+  padding: 40px;
+  float:left;
+  color:black;
+ 
+}
+.list{list-style: none;}
+

@@ -1,0 +1,11 @@
+<div class="col-md-12 "   >
+  <div class="panel panel-default" >
+    <div *ngFor="let rem of col; let i = index" class="element block">
+    <div class="panel-heading" #head attr.id="{{i}}">{{rem?.reminder}}</div>
+    <div class="functions"><a href="#"><img (click)="delete(head);" class="delete" src="/assets/images/delete.png"></a></div>
+    <div class="panel-body">Datum podsjetnika : {{rem?.date}}</div>
+    <div class="panel-body">Vrijeme podsjetnika : {{rem?.time}}</div>
+    <div class="panel-body">Napomena : {{rem?.extrareminder}}</div>
+  </div>
+  </div>
+</div>
