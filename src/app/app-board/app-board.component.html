@@ -19,6 +19,7 @@
         </li>
         <li><button (click)="getUpcoming()" class="btn">Upcoming</button></li>
         <li><button (click)="createNew()" class="btn">Create new</button></li>
+        <li><button (click)="showCalendar()"  class="btn">Calendar</button></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><button (click)="userInfo()" class="btn btn-dark"><span class="glyphicon glyphicon-user"></span>
@@ -42,3 +43,4 @@
   <div class="heading">{{sideTitle}}</div>
   <div #sideContent class="panel-body"></div>
 </div><br>
+<div #calendar (closeCalendar)="closeCalendar($event)"> </div>

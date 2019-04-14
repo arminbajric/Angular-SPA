@@ -1,0 +1,55 @@
+#calendar {
+    position: absolute;
+    z-index: 9;
+    background-color: white;
+    border: 1px solid #d3d3d3;
+    text-align: center;
+  }
+  
+  #header {
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+  }
+  .day{
+      width:25px;
+      height: 25px;
+      outline: none;
+      border: none;
+      background-color: white;
+
+
+  }
+  .day:hover{
+      background-color: #2196F3;
+      color:white;
+  }
+  .switch{
+      outline: none;
+      border: none;
+      width: 50%;
+
+  }
+  .switch:hover{
+      background-color: #2196F3;
+      color:white;
+  }
+  .date{
+      border-top: 1px solid black;
+      text-align: center;
+      display: block;
+  }
+  .exit{
+      width:15px;
+      height: 15px;
+    
+  }
+  .exitButton{
+      outline: none;
+      border: none;
+      float: right;
+      background-color: transparent;
+      
+  }

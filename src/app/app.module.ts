@@ -16,6 +16,7 @@ import {UsernameValidator} from './validators/username';
 import {EmailValidator} from './validators/email';
 import { CustomFormsModule } from 'ngx-custom-validators';
 import { UpcomingComponent } from './upcoming/upcoming.component';
+import { CalendarComponent } from './calendar/calendar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
     LoginComponent,
     SignupComponent,
     UpcomingComponent,
+    CalendarComponent,
   
     
 
@@ -41,7 +43,7 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
     ReactiveFormsModule,
     CustomFormsModule
   ],
-  entryComponents:[ViewReminderComponent,NewReminderComponent,ReminderListComponent,ReminderBodyComponent,UpcomingComponent],
+  entryComponents:[CalendarComponent,ViewReminderComponent,NewReminderComponent,ReminderListComponent,ReminderBodyComponent,UpcomingComponent],
   providers: [
     UsernameValidator,
     EmailValidator,

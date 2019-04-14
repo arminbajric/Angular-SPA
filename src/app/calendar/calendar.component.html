@@ -1,0 +1,65 @@
+<div id="calendar">
+  <div id="header">Calendar<button class="exitButton" (click)="closeCalendar()"><img class="exit" src="assets/images/delete.png"></button></div>
+  <table>
+    <tr>
+      <td class="day">Mon</td>
+      <td class="day">Tue</td>
+      <td class="day">Wen</td>
+      <td class="day">Thu</td>
+      <td class="day">Fri</td>
+      <td class="day">Sat</td>
+      <td class="day">Sun</td>
+    </tr>
+    <tr>
+      <td><button class="day" (dblclick)="createNew(month[0],presentMonth,presentYear)">{{month[0]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[1],presentMonth,presentYear)">{{month[1]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[2],presentMonth,presentYear)">{{month[2]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[3],presentMonth,presentYear)">{{month[3]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[4],presentMonth,presentYear)">{{month[4]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[5],presentMonth,presentYear)">{{month[5]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[6],presentMonth,presentYear)">{{month[6]}}</button></td>
+    </tr>
+    <tr>
+      <td><button class="day" (dblclick)="createNew(month[7],presentMonth,presentYear)">{{month[7]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[8],presentMonth,presentYear)">{{month[8]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[9],presentMonth,presentYear)">{{month[9]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[10],presentMonth,presentYear)">{{month[10]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[11],presentMonth,presentYear)">{{month[11]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[12],presentMonth,presentYear)">{{month[12]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[13],presentMonth,presentYear)">{{month[13]}}</button></td>
+    </tr>
+    <tr>
+      <td><button class="day" (dblclick)="createNew(month[14],presentMonth,presentYear)">{{month[14]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[15],presentMonth,presentYear)">{{month[15]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[16],presentMonth,presentYear)">{{month[16]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[17],presentMonth,presentYear)">{{month[17]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[18],presentMonth,presentYear)">{{month[18]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[19],presentMonth,presentYear)">{{month[19]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[20],presentMonth,presentYear)">{{month[20]}}</button></td>
+    </tr>
+    <tr>
+      <td><button class="day" (dblclick)="createNew(month[21],presentMonth,presentYear)">{{month[21]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[22],presentMonth,presentYear)">{{month[22]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[23],presentMonth,presentYear)">{{month[23]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[24],presentMonth,presentYear)">{{month[24]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[25],presentMonth,presentYear)">{{month[25]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[26],presentMonth,presentYear)">{{month[26]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[27],presentMonth,presentYear)">{{month[27]}}</button></td>
+    </tr>
+    <tr>
+      <td><button class="day" (dblclick)="createNew(month[28],presentMonth,presentYear)">{{month[28]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[29],presentMonth,presentYear)">{{month[29]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[30],presentMonth,presentYear)">{{month[30]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[31],presentMonth,presentYear)">{{month[31]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[32],presentMonth,presentYear)">{{month[32]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[33],presentMonth,presentYear)">{{month[33]}}</button></td>
+      <td><button class="day" (dblclick)="createNew(month[34],presentMonth,presentYear)">{{month[34]}}</button></td>
+    </tr>
+   
+      
+  
+  </table>
+  <div class="date">{{presentDay}}.{{presentMonth}}.{{presentYear}}</div>
+  <button class="switch" (click)="setPreviousMonth()">Previous</button>
+      <button class="switch" (click)="setNewxtMonth()">Next</button>
+</div>
