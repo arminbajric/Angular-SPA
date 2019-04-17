@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, AfterViewInit, ComponentFactoryResolver, Input, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, AfterViewInit, ComponentFactoryResolver, Input, EventEmitter, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -16,6 +16,7 @@ import { CalendarComponent } from '../calendar/calendar.component';
   styleUrls: ['./app-board.component.css']
 })
 export class AppBoardComponent implements OnInit, AfterViewInit {
+  
 
   @ViewChild('mainContent', { read: ViewContainerRef }) mainBlock: ViewContainerRef;
   @ViewChild('sideContent', { read: ViewContainerRef }) sideBlock: ViewContainerRef;
@@ -26,7 +27,7 @@ export class AppBoardComponent implements OnInit, AfterViewInit {
   mainTitle;
   sideTitle;
   loaded;
-  calendar:Promise<any>;
+  calendar:boolean;
   constructor(private componentFactory: ComponentFactoryResolver, private activatedRoute: ActivatedRoute, private router: Router, private reminderService: ReminderService) { }
 
   ngOnInit() {
@@ -50,6 +51,12 @@ export class AppBoardComponent implements OnInit, AfterViewInit {
     this.sideBlock.clear();
     const side = this.componentFactory.resolveComponentFactory(UpcomingComponent);
     this.sideBlock.createComponent(side);
+    if(localStorage.getItem('calendar'))
+    {
+      if(localStorage.getItem('calendar')=='true'){
+         this.showCalendar();
+      }
+    }
   }
   ngAfterViewInit(): void {
 
@@ -71,12 +78,19 @@ export class AppBoardComponent implements OnInit, AfterViewInit {
 
   }
   showCalendar(){
+    if(localStorage.getItem('calendar'))
+    {
+      this.calendarBlock.clear();
+      localStorage.removeItem('calendar');
+    }
+    else{
      this.calendarBlock.clear();
      const factory=this.componentFactory.resolveComponentFactory(CalendarComponent);
      this.calendarBlock.createComponent(factory);
-  }
+    }
+    }
  closeCalendar(event){
-   console.log('Uaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+   
    this.calendarBlock.clear();
  }
 }

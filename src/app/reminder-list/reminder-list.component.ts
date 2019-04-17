@@ -13,11 +13,13 @@ export class ReminderListComponent  implements OnInit {
  loaded;
 remindersList:Array<any>;
 message:any;
+i:any;
   constructor(private reminders:ReminderService) {
   
    }
 
   ngOnInit() {
+    this.i=0;
     this.loaded=false;
     this.reminders.getUserReminders().subscribe(response=>{
       if(response.status==200)
@@ -25,7 +27,7 @@ message:any;
         this.remindersList=response.body;
         this.message='';
         this.loaded=true;
-        
+        console.log(this.remindersList);
       }
       else{
         this.message='You have no reminders.Create new ones.';
@@ -33,6 +35,7 @@ message:any;
       }
       
     })
+  
   }
  
   onClickLoadReminder(select: any) {

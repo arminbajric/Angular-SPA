@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 
 
 
@@ -7,7 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css']
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements OnInit ,OnDestroy{
+ 
   month = [];
   presentDay;
   presentMonth;
@@ -19,13 +20,19 @@ export class CalendarComponent implements OnInit {
 
   ngOnInit() {
     this.calendar = new Promise((resolve) => {
-
       this.loadScript();
     });
     this.generateMonth(new Date().getDate(), new Date().getDay(), new Date().getMonth() + 1, new Date().getFullYear());
     this.presentDay = new Date().getDate();
     this.presentMonth = new Date().getMonth() + 1;
     this.presentYear = new Date().getFullYear();
+    localStorage.setItem('calendar','true');
+  }
+  ngOnDestroy() {
+   let node=document.getElementById('floatScript');
+   node.outerHTML='';
+   document.getElementById('calendarSwitch').removeAttribute('class');
+   document.getElementById('calendarSwitch').setAttribute('class','btn');
   }
   createNew(day, month, year) {
 
@@ -38,12 +45,14 @@ export class CalendarComponent implements OnInit {
   public loadScript() {
 
     let node = document.createElement('script');
+    node.id="floatScript";
     node.src = 'assets/scripts/element_float.js';
     node.type = 'text/javascript';
     node.async = true;
     node.charset = 'utf-8';
     document.getElementsByTagName('head')[0].appendChild(node);
-
+    document.getElementById('calendarSwitch').setAttribute('class','active btn');
+   
   }
   generateMonth(currentDay, dayInWeek, month, year) {
     let daysInMonth;

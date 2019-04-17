@@ -4,3 +4,12 @@ li:hover{
 .load{
   text-align: center;
 }
+.head{
+  background-color: #2196F3;
+  margin-top: 0;
+  padding: 5px;
+  border-bottom: 1px solid brown ;
+}
+panel{
+  box-shadow: 2px grey;
+}

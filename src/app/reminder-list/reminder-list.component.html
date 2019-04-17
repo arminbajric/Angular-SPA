@@ -1,12 +1,42 @@
 <div *ngIf="!loaded" class="load">Fetching..<br><img height="100" widht="100" src="../assets/images/load.gif"></div>
 <h4>{{message}}</h4>
 <div *ngIf="!message && loaded">
-<ul class="dropdown-menu" role="menu" aria-labelledby="testMenu">
-  <li role="presentation" class="tests" #list attr.id="{{i}}" *ngFor="let rem of col; let i = index" (click)="onClickLoadReminder(list);">{{rem?.reminder}}</li>
-</ul>
-<nav *ngIf="remindersList.length>2" aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-  </ul>
-</nav>
+  <div class="panel panel-default">
+    <div class="head">
+      <h5>{{remindersList[0].reminderTitle}}</h5>
+    </div>
+    <div class="panel-body">
+      <div class="row">Created: {{remindersList[0].doc}}</div>
+      <div class="row">Expires: {{remindersList[0].doe}}</div>
+      <div class="row">Time: {{remindersList[0].toe}}</div>
+      <div class="row">Description: {{remindersList[0].reminderText}}</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="head">
+      <h5>{{remindersList[0].reminderTitle}}</h5>
+    </div>
+    <div class="panel-body">
+      <div class="row">Created: {{remindersList[0].doc}}</div>
+      <div class="row">Expires: {{remindersList[0].doe}}</div>
+      <div class="row">Time: {{remindersList[0].toe}}</div>
+      <div class="row">Description: {{remindersList[0].reminderText}}</div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="head">
+      <h5>{{remindersList[0].reminderTitle}}</h5>
+    </div>
+    <div class="panel-body">
+      <div class="row">Created: {{remindersList[0].doc}}</div>
+      <div class="row">Expires: {{remindersList[0].doe}}</div>
+      <div class="row">Time: {{remindersList[0].toe}}</div>
+      <div class="row">Description: {{remindersList[0].reminderText}}</div>
+    </div>
+  </div>
+  <nav *ngIf="remindersList.length>2" aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+    </ul>
+  </nav>
 </div>
